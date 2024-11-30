@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8g5xkor18jxs"]
+
+[ext_resource type="Script" path="res://levels/main_level.gd" id="1_bv4dc"]
+[ext_resource type="PackedScene" uid="uid://2nys8w1qupxk" path="res://platforms/default_platform.tscn" id="2_jc7a2"]
+[ext_resource type="Script" path="res://levels/jumper.gd" id="2_w3mhc"]
+[ext_resource type="Texture2D" uid="uid://dx2berefi1sq4" path="res://character/icon.svg" id="3_6ibja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iet57"]
+size = Vector2(129, 130)
+
+[node name="main_level" type="Node2D"]
+position = Vector2(575.73, 324.335)
+script = ExtResource("1_bv4dc")
+
+[node name="jumper" type="CharacterBody2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_w3mhc")
+
+[node name="jumpdir" type="Sprite2D" parent="jumper"]
+visible = false
+position = Vector2(0.27002, 0.664948)
+scale = Vector2(0.238281, 2.3125)
+texture = ExtResource("3_6ibja")
+centered = false
+offset = Vector2(-62.62, -120)
+
+[node name="Sprite2D" type="Sprite2D" parent="jumper"]
+texture = ExtResource("3_6ibja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jumper"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_iet57")
+
+[node name="Camera2D" type="Camera2D" parent="jumper"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_jc7a2")]
+position = Vector2(-13, 163)
