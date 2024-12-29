@@ -35,3 +35,9 @@ shape = SubResource("RectangleShape2D_iet57")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_jc7a2")]
 position = Vector2(-13, 163)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_jc7a2")]
+position = Vector2(1382.27, -180.335)
+
+[node name="StaticBody2D" parent="StaticBody2D2" instance=ExtResource("2_jc7a2")]
+position = Vector2(-2013, -519)

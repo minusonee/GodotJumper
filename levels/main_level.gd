@@ -28,4 +28,13 @@ func _process(delta: float) -> void:
 		var jumpdirection = Vector2(direction)
 	elif not Input.is_action_pressed("left_click") and jumpdir.visible and jumper.is_on_floor():
 		jumpdir.visible = false
+		if (direction.x > 200):
+			direction.x = 200
+		elif (direction.x < -200):
+			direction.x = -200
+		if (direction.y > 200):
+			direction.y = 200
+		elif (direction.y < -200):
+			direction.y = -200
+		print(direction)
 		jumper.jump(direction.x, direction.y)

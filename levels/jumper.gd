@@ -12,8 +12,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		jumping = false
 		velocity += get_gravity() * delta
-	
-	
 	move_and_slide()
 
 func jump(x_velocity, y_velocity: float):
